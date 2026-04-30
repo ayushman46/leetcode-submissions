@@ -5,11 +5,13 @@ class Solution(object):
         :rtype: int
         """
         curr=0
-        max=nums[0]
+        sum=nums[0]
+    
         for i in range(len(nums)):
             curr+=nums[i]
-            if curr>max:
-                max=curr
+            if curr>sum:
+                sum=curr
             if curr<=0:
                 curr=0
-        return max
+        return sum
+        
