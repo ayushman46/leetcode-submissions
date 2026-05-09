@@ -1,24 +1,17 @@
 class Solution(object):
     def rotate(self, nums, k):
         n = len(nums)
-        k = k % n
-        if k == 0:
-            return
+        k = k % n  # Handle large k
 
-        start = 0
-        count = 0
+        # Create a new array to store rotated values
+        result = [0] * n
 
-        while count < n:
-            current = start
-            prev = nums[start]
+        # Place each element in its new position
+        for i in range(n):
+            new_index = (i + k) % n
+            result[new_index] = nums[i]
 
-            while True:
-                next_idx = (current + k) % n
-                nums[next_idx], prev = prev, nums[next_idx]
-                current = next_idx
-                count += 1
-
-                if current == start:
-                    break
-
-            start += 1
+        # Copy back to nums (in-place)
+        for i in range(n):
+            nums[i] = result[i]
+        return nums
