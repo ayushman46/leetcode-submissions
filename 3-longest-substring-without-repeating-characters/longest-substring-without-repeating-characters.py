@@ -16,7 +16,8 @@ class Solution(object):
                 l += 1
 
             set1.add(s[r])
-            ans = max(ans, r - l + 1)
-            r += 1
+            r+=1
+            ans = max(ans, r - l)
+            
 
         return ans
