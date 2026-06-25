@@ -7,8 +7,9 @@ class Solution(object):
         """
         a={}
         for i,num in enumerate(numbers):
-            diff=target-num
-            if diff in a:
-                return [a[diff]+1,i+1]
+            dif=target-num
+            if dif in a:
+                return [a[dif]+1,i+1]
             else:
                 a[num]=i
+        
