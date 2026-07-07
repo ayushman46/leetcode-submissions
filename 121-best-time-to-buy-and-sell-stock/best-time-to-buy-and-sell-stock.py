@@ -2,14 +2,15 @@ class Solution(object):
     def maxProfit(self, prices):
         
       
+        profit=0
         buy = prices[0]
-        profit = 0
-
+        maxi=0
         for price in prices:
-            if price < buy:
-                buy = price
+            if price<buy:
+                buy=price
             else:
-                profit = max(profit, price - buy)
+                profit=price-buy
+                maxi=max(maxi,profit)
+        return maxi
 
-        return profit
         
