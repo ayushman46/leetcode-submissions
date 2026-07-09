@@ -1,20 +1,11 @@
 class Solution:
     def twoSum(self, numbers, target):
 
-        start = 0##.  two pointer approach because sorted array 
-        
-        end = len(numbers) - 1
-
-        while start < end:
-
-            total = numbers[start] + numbers[end]
-
-            if total == target:
-                return [start + 1, end + 1]
-
-            elif total < target:
-                start += 1
+        a={}
+        for i,n in enumerate(numbers):
+            dif=target-n
+            if dif in a:
+                return [a[dif]+1,i+1]
             else:
-                end -= 1
-
-        return [-1, -1]
+                a[n]=i
+       
