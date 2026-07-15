@@ -5,7 +5,8 @@ class Solution(object):
         :rtype: int
         """
         l,r=0,len(height)-1
-        lmax,rmax=height[l],height[r]
+        lmax=height[l]
+        rmax=height[r]
         res=0
         while l<r:
             if lmax<rmax:
@@ -16,4 +17,4 @@ class Solution(object):
                 r-=1
                 rmax=max(rmax,height[r])
                 res+=rmax-height[r]
-        return res
+        return res 
