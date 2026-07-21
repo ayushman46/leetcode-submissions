@@ -5,6 +5,7 @@ class Solution(object):
         :type k: int
         :rtype: int
         """
+       
         l=0
         count={}
         res=0
@@ -15,3 +16,6 @@ class Solution(object):
                 l+=1
             res=max(res,r-l+1)
         return res
+
+            
+        
