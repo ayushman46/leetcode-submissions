@@ -4,12 +4,13 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        count={}
-        for i in range(len(nums)):
-            if nums[i] not in count:
-                count[nums[i]]=1
+        
+        a={}
+        for i in nums:
+            if i in a:
+                a[i]+=1
             else:
-                count[nums[i]]+=1
-        for i in count:
-            if count[i]==1:
+                a[i]=1
+        for i in a:
+            if a[i]==1:
                 return i
