@@ -11,6 +11,6 @@ class Solution(object):
 
         while p2.next!=None:
             p2=p2.next
-            p1=p1.next
+            p1=p1.next            #whole while loops runs (number theory trick)
         p1.next=p1.next.next
         return head
