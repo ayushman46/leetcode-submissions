@@ -14,7 +14,7 @@ class Solution(object):
             slow=slow.next
             fast=fast.next.next
 
-        #reversing
+        #reversing (only second half ie after fast reaches the end )
         curr=slow.next
         prev=slow.next=None
         while curr:
@@ -24,6 +24,7 @@ class Solution(object):
             prev=curr
             curr=nxt
         
+        #merging after reversing
         first,second=head,prev
         while second:
             tmp1 = first.next
